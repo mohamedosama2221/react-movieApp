@@ -2,6 +2,7 @@ import {
   FETCH_MOVIES,
   FETCH_TVSHOWS,
   FETCH_MOVIEDETAILS,
+  CLEAR_ALL,
   CLEAR,
 } from "./types";
 import { APIKEY } from "./../api/movieApiKey";
@@ -12,6 +13,7 @@ export const fetchingMovies =
   async (dispatch) => {
     const data = await axios.get(`?apiKey=${APIKEY}&s=${url}&type=movie`);
     const products = await data.data;
+    console.log(`from action ${products.Search}`);
 
     dispatch({
       type: FETCH_MOVIES,
@@ -25,7 +27,7 @@ export const fetchingTVshows =
   async (dispatch) => {
     const data = await axios.get(`?apiKey=${APIKEY}&s=${url}&type=series`);
     const products = await data.data;
-
+    console.log(`from action ${products.Search}`);
     dispatch({
       type: FETCH_TVSHOWS,
       payload: {
@@ -37,5 +39,10 @@ export const fetchingTVshows =
 export const clear = () => {
   return {
     type: CLEAR,
+  };
+};
+export const clearAll = () => {
+  return {
+    type: CLEAR_ALL,
   };
 };

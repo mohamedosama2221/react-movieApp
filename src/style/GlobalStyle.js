@@ -7,6 +7,13 @@ const GlobalStyle = createGlobalStyle`
         padding: 0;
         box-sizing: border-box;
         font-family: 'Roboto Condensed', sans-serif;
+        min-height: 100vh;
+    }
+    #root{
+        min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
     }
 `;
 export default GlobalStyle;
