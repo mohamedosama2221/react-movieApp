@@ -5,9 +5,11 @@ import Footer from "./components/Footer/Footer";
 import PageNotFound from "./components/PageNotFound/PageNotFound";
 import Home from "./components/Home/Home";
 import MovieDetails from "./components/MovieDetails/MovieDetails";
+import GlobalStyle from "./style/GlobalStyle";
 function App() {
   return (
     <Router>
+      <GlobalStyle />
       <Header />
       <Switch>
         <Route path="/" exact>
