@@ -6,7 +6,7 @@ const MovieListing = (props) => {
   const { movies, tvShows } = props;
   return (
     <div>
-      <Links as="h2" style={{ margin: "1.5rem 0" }}>
+      <Links as="h2" header style={{ margin: "1.5rem 0" }}>
         Movies
       </Links>
       {movies ? (
@@ -22,7 +22,7 @@ const MovieListing = (props) => {
           No movies found
         </Links>
       )}
-      <Links as="h2" style={{ margin: "1.5rem 0", marginTop: "5rem" }}>
+      <Links as="h2" header style={{ margin: "1.5rem 0", marginTop: "5rem" }}>
         TVShows
       </Links>
 

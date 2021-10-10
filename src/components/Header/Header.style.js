@@ -27,6 +27,13 @@ export const Links = styled.span`
         color: ${(props) => props.theme.colors.lightRed} !important;
       }
     `}
+  ${({ header }) =>
+    header &&
+    css`
+      &:hover {
+        color: ${(props) => props.theme.colors.lightRed} !important;
+      }
+    `}
 `;
 
 export const Button = styled.button`
