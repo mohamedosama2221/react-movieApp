@@ -1,7 +1,7 @@
 import React, { useEffect } from "react";
-import MovieDetails from "./../MovieDetails/MovieDetails";
 import { fetchingMovies, fetchingTVshows } from "./../../redux/actions";
 import { useDispatch, useSelector } from "react-redux";
+import MovieListing from "../MovieListing/MovieListing";
 
 const Home = () => {
   const dispatch = useDispatch();
@@ -13,7 +13,7 @@ const Home = () => {
   }, [dispatch]);
   return (
     <div className="container">
-      <MovieDetails movies={state.movies} tvshows={state.tvShows} />
+      <MovieListing movies={state.movies} tvShows={state.tvShows} />
     </div>
   );
 };
