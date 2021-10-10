@@ -3,6 +3,7 @@ const GlobalStyle = createGlobalStyle`
    
     body {
         margin: 0;
+        background-color: #0f171e;
         padding: 0;
         box-sizing: border-box;
         font-family: 'Roboto Condensed', sans-serif;
