@@ -6,4 +6,5 @@ export const FooterStyled = styled.footer`
   padding: 1.2rem 0;
   font-size: 0.9rem;
   color: ${(props) => props.theme.colors.lightRed};
+  margin-top: 5rem;
 `;
