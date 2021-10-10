@@ -9,23 +9,35 @@ const MovieListing = (props) => {
       <Links as="h2" style={{ margin: "1.5rem 0" }}>
         Movies
       </Links>
-      {movies && movies.length > 0 ? (
-        <Slider items={movies} />
+      {movies ? (
+        movies.length > 0 ? (
+          <Slider items={movies} />
+        ) : (
+          <div className="d-flex justify-content-center">
+            <GridLoader size={15} margin={2} color="#950101" />
+          </div>
+        )
       ) : (
-        <div className="d-flex justify-content-center">
-          <GridLoader size={15} margin={2} color="#950101" />
-        </div>
+        <Links as="h1" notfound>
+          No movies found
+        </Links>
       )}
       <Links as="h2" style={{ margin: "1.5rem 0", marginTop: "5rem" }}>
         TVShows
       </Links>
 
-      {tvShows && tvShows.length > 0 ? (
-        <Slider items={tvShows} />
+      {tvShows ? (
+        tvShows.length > 0 ? (
+          <Slider items={tvShows} />
+        ) : (
+          <div className="d-flex justify-content-center">
+            <GridLoader size={15} margin={2} color="#950101" />
+          </div>
+        )
       ) : (
-        <div className="d-flex justify-content-center">
-          <GridLoader size={15} margin={2} color="#950101" />
-        </div>
+        <Links as="h1" notfound>
+          No TVshows found
+        </Links>
       )}
     </div>
   );

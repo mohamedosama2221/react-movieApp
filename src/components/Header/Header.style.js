@@ -1,4 +1,4 @@
-import styled from "styled-components";
+import styled, { css } from "styled-components";
 
 export const Nav = styled.nav`
   background-color: ${(props) => props.theme.colors.main} !important;
@@ -16,6 +16,17 @@ export const Links = styled.span`
     color: white !important;
     transition: all 0.5s ease;
   }
+  ${({ notfound }) =>
+    notfound &&
+    css`
+      opacity: 0.35;
+      font-size: 3rem;
+      text-align: center;
+      margin: 3rem 0;
+      &:hover {
+        color: ${(props) => props.theme.colors.lightRed} !important;
+      }
+    `}
 `;
 
 export const Button = styled.button`

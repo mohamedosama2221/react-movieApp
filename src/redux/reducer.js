@@ -2,6 +2,7 @@ import {
   FETCH_MOVIES,
   FETCH_TVSHOWS,
   FETCH_MOVIEDETAILS,
+  CLEAR_ALL,
   CLEAR,
 } from "./types";
 
@@ -27,6 +28,12 @@ export const mainReducer = (state = initState, { type, payload }) => {
       return {
         ...state,
         currentMovie: [],
+      };
+    case CLEAR_ALL:
+      return {
+        ...state,
+        movies: [],
+        tvShows: [],
       };
     default:
       return state;

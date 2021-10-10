@@ -7,4 +7,5 @@ export const FooterStyled = styled.footer`
   font-size: 0.9rem;
   color: ${(props) => props.theme.colors.lightRed};
   margin-top: 5rem;
+  justify-self: end;
 `;
