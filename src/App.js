@@ -15,9 +15,7 @@ function App() {
         <Route path="/" exact>
           <Home />
         </Route>
-        <Route path="/movie/:movieId" children={<MovieDetails />}>
-          <Home />
-        </Route>
+        <Route path="/movie/:movieId" children={<MovieDetails />}></Route>
         <Route path="*">
           <PageNotFound />
         </Route>
