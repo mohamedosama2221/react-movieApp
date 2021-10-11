@@ -4,12 +4,14 @@ import {
   FETCH_MOVIEDETAILS,
   CLEAR_ALL,
   CLEAR,
+  SHOW_HOME,
 } from "./types";
 
 const initState = {
   movies: [],
   tvShows: [],
   currentMovie: [],
+  homePage: true,
 };
 
 export const mainReducer = (state = initState, { type, payload }) => {
@@ -23,6 +25,17 @@ export const mainReducer = (state = initState, { type, payload }) => {
       return {
         ...state,
         tvShows: payload.tvShows,
+      };
+    case FETCH_MOVIEDETAILS:
+      return {
+        ...state,
+        currentMovie: [payload.movieDetails],
+        homePage: false,
+      };
+    case SHOW_HOME:
+      return {
+        ...state,
+        homePage: true,
       };
     case CLEAR:
       return {

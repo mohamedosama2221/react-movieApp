@@ -4,17 +4,16 @@ import {
   FETCH_MOVIEDETAILS,
   CLEAR_ALL,
   CLEAR,
+  SHOW_HOME,
 } from "./types";
 import { APIKEY } from "./../api/movieApiKey";
 import axios from "../api/movieApi";
 
 export const fetchingMovies =
-  (url = "Harry") =>
+  (url = "harry") =>
   async (dispatch) => {
     const data = await axios.get(`?apiKey=${APIKEY}&s=${url}&type=movie`);
     const products = await data.data;
-    console.log(`from action ${products.Search}`);
-
     dispatch({
       type: FETCH_MOVIES,
       payload: {
@@ -23,11 +22,10 @@ export const fetchingMovies =
     });
   };
 export const fetchingTVshows =
-  (url = "Harry") =>
+  (url = "harry") =>
   async (dispatch) => {
     const data = await axios.get(`?apiKey=${APIKEY}&s=${url}&type=series`);
     const products = await data.data;
-    console.log(`from action ${products.Search}`);
     dispatch({
       type: FETCH_TVSHOWS,
       payload: {
@@ -35,6 +33,20 @@ export const fetchingTVshows =
       },
     });
   };
+
+export const fetchingSingleMovie = (id) => async (dispatch) => {
+  console.log(id);
+
+  const data = await axios.get(`?apiKey=${APIKEY}&i=${id}&plot=full`);
+  const products = await data.data;
+  console.log(data);
+  dispatch({
+    type: FETCH_MOVIEDETAILS,
+    payload: {
+      movieDetails: products,
+    },
+  });
+};
 
 export const clear = () => {
   return {
@@ -44,5 +56,10 @@ export const clear = () => {
 export const clearAll = () => {
   return {
     type: CLEAR_ALL,
+  };
+};
+export const showHome = () => {
+  return {
+    type: SHOW_HOME,
   };
 };
