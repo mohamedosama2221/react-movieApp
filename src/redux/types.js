@@ -3,3 +3,4 @@ export const FETCH_TVSHOWS = "FETCH_TVSHOWS";
 export const FETCH_MOVIEDETAILS = "FETCH_MOVIEDETAILS";
 export const CLEAR = "CLEAR";
 export const CLEAR_ALL = "CLEAR_ALL";
+export const SHOW_HOME = "SHOW_HOME";
