@@ -4,6 +4,7 @@ import { fetchingSingleMovie, clear } from "./../../redux/actions";
 import { useDispatch, useSelector } from "react-redux";
 import GridLoader from "react-spinners/GridLoader";
 import { DetailsWrapper } from "./MovieDetails.style";
+import Rating from "react-rating";
 const MovieDetails = () => {
   const { movieId } = useParams();
   const dispatch = useDispatch();
@@ -25,7 +26,13 @@ const MovieDetails = () => {
               <h5 className="mb-4">
                 Release Date: {state.currentMovie[0].Released}
               </h5>
-              <h5 className="mb-4">{state.currentMovie[0].imdbRating}</h5>
+              <Rating
+                className="mb-4 text-danger"
+                initialRating={state.currentMovie[0].imdbRating / 2}
+                readonly
+                emptySymbol="far fa-star"
+                fullSymbol="fas fa-star"
+              />
               <h5 className="mb-4">
                 Duration: {state.currentMovie[0].Runtime}
               </h5>
