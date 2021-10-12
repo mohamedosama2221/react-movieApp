@@ -6,8 +6,8 @@ export const PageNotFoundStyled = styled.div`
   min-width: 100vw;
   flex-direction: column;
   & img {
-    width: auto;
-    height: 100%;
+    max-width: 100%;
+    height: auto;
     display: block;
   }
 `;
